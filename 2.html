@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var str = "This is is is is a string";
+      console.log(str);
+
+      // First Occurence
+      var posFirst = str.indexOf("is");
+      console.log(`First Occurence of "is" is at index ${posFirst}`);
+
+      // Last Occurence
+      var posLast = str.lastIndexOf("is");
+      console.log(`Last Occurence of "is" is at index ${posLast}`);
+
+      // Substring
+      var substr = str.slice(5, 10);
+      console.log(`Substring from index 5 to 10 is: ${substr}`);
+
+      var substr1 = str.substr(5, 10);
+      console.log(`Substring from index 5 with length 10 is: ${substr1}`);
+      var substr2 = str.substring(5, 10);
+      console.log(`Substring from index 5 to 10 is: ${substr2}`);
+
+      // Difference between slice, substr and substring is -
+      // 1. slice and substring are similar but substr is different
+      // 2. slice and substring take start and end index but substr takes start index and length
+      // 3. substr can take negative values for the length parameter
+      // 4. substring does not support negative values for the start and end index, it treats them as 0
+
+      // Replace
+      var newStr = str.replace(" is ", " was ");
+      console.log(`Original string is: ${str}`);
+      console.log(`String after replacement is: ${newStr}`);
+
+      var stringWithSpaces = "   Hello World   ";
+      console.log(`String with spaces: "${stringWithSpaces}"`);
+      var trimmedString = stringWithSpaces.trim();
+      console.log(`Trimmed string: "${trimmedString}"`);
+
+      // Character at a specific index
+      var charAt5 = str.charAt(5);
+      console.log(`Character at index 5 is: ${charAt5}`);
+      console.log(`Character at index 5 using bracket notation is: ${str[5]}`);
+      console.log(`type of charAt5: ${typeof charAt5}`);
+      console.log(`type of str[5]: ${typeof str[5]}`);
+
+      // Character code at a specific index
+      var charCodeAt5 = str.charCodeAt(5);
+      console.log(`Character code at index 5 is: ${charCodeAt5}`);
+
+      // Constant content can be changed but not reassigned
+      const a = "This is constant content";
+      console.log(`Constant content is: ${a}`);
+      // a = "Trying to change constant content"; // This will throw an error
+      // a[0] = "t"; // This will also throw an error
+      // To change the content of a constant string, we can use string methods to create a new string
+      const newA = a.replace("constant", "new");
+      console.log(`New string is: ${newA}`);
+      // Another way to change the content of a constant string is to use template literals
+      const newA1 = `${a} with some additional content`;
+      console.log(`New string using template literal is: ${newA1}`);
+
+      let l1 = "Hello";
+      console.log(`l1 is: ${l1}`);
+
+      // Difference between var, let and const is -
+      // 1. var is function scoped but let and const are block scoped. Ex -
+      // function test() {
+      //   if (true) {
+      //     var a = 10;
+      //     let b = 20;
+      //     const c = 30;
+      //   }
+      //   console.log(a); // This will print 10
+      //   console.log(b); // This will throw an error
+      //   console.log(c); // This will also throw an error
+      // }
+      // 2. var can be redeclared and updated but let can be updated but not redeclared and const cannot be updated or redeclared. Ex -
+      // var a = 10; var a = 20; // This is valid
+      // let a = 10; let a = 20; // This will throw an error and
+      // const a = 10; const a = 20; // This will also throw an error
+      // 3. var is hoisted but let and const are not hoisted. Ex -
+      // console.log(a); // This will print undefined
+      // var a = 10;
+      // console.log(b); // This will throw an error
+      // let b = 20;
+      // console.log(c); // This will also throw an error
+      // const c = 30;
+      //4. var can be declared without initialization but let and const cannot be declared without initialization. Ex -
+      // var a; // This is valid
+      // let b; // This will throw an error
+      // const c; // This will also throw an error
+    </script>
+
+    <h1>This is second doc</h1>
+  </body>
+</html>
