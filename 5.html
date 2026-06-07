@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document 5</title>
+  </head>
+  <body>
+    <div class="container">This is a container div</div>
+    <script>
+      let mv1 = 34;
+      let mv2 = "String";
+      let mv3 = true; // Boolean value
+      let mv4 = null; // Null value
+      let mv5; // Undefined value
+      let mv6 = undefined; // Another way to declare an undefined value
+
+      let emp = {
+        name: "John Doe",
+        age: 30,
+        isMarried: false,
+        "able to relocate": true, // Property name with spaces should be in quotes
+        address: {
+          street: "123 Main St",
+          city: "Anytown",
+          country: "USA",
+        },
+        hobbies: ["reading", "traveling", "coding"],
+        greet: function () {
+          console.log(`Hello, my name is ${this.name}`);
+        },
+      };
+
+      console.log(emp);
+      console.log(`Employee name is: ${emp.name}`);
+      console.log(`Employee name is: ${emp["name"]}`);
+      // Both dot notation and bracket notation can be used to access object properties, but bracket notation is required when the property name contains spaces or special characters
+      console.log(`Employee can relocate: ${emp["able to relocate"]}`);
+      //console.log(`Employee can relocate: ${emp.able to relocate}`);
+      // This will throw an error because of the spaces in the property name
+      console.log(`Employee's first hobby is: ${emp.hobbies[0]}`);
+      // Adding a new property to an object
+      emp.salary = 50000;
+      console.log("Added salary property to employee object");
+      console.log(emp);
+
+      // Arrays
+      let arr = [
+        1,
+        "Hello",
+        true,
+        null,
+        undefined,
+        { name: "Object in array", value: 42, "is an object": true },
+        [1, 2, 3],
+      ];
+      console.log(arr);
+      // Arrays can contain elements of different data types, including objects and other arrays (nested arrays)
+
+      // Accessing array elements
+      console.log(`First element of the array is: ${arr[0]}`);
+      console.log(`Second element of the array is: ${arr[1]}`);
+      console.log(`Last element of the array is: ${arr[arr.length - 1]}`);
+      // Accessing object properties and array elements is done using bracket notation with the index for arrays and the property name for objects
+      console.log(`Nested array element: ${arr[6][1]}`);
+      // Accessing nested object properties
+      console.log(`Name of the object in array: ${arr[5].name}`);
+      console.log(`Value of the object in array: ${arr[5].value}`);
+      console.log(
+        `Is the object in array an object?: ${arr[5]["is an object"]}`,
+      );
+
+      // Adding ele to an array
+      arr.push("New element");
+      console.log("Added a new element to the array");
+      console.log(arr);
+      // Adding a new attribute to an object inside an array
+      arr[5].newAttribute = "This is a new attribute";
+      console.log("Added a new attribute to the object in array");
+      console.log(arr[5]);
+      // Adding a new element to a nested array
+      arr[6].push(4);
+      console.log("Added a new element to the nested array");
+      console.log(arr[6]);
+
+      let subjects = new Array("Math", "Science", "History");
+      console.log(subjects);
+      // The Array constructor can be used to create an array, but it is generally recommended to use array literals ([]) for better readability and performance
+      subjects.push("English");
+      console.log("Added a new subject to the subjects array");
+      subjects.sort();
+      console.log("Sorted subjects array:");
+      console.log(subjects);
+      console.log(`Type of subjects: ${typeof subjects}`);
+    </script>
+  </body>
+</html>
