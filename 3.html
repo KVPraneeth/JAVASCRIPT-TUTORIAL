@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document 4</title>
+  </head>
+  <body>
+    <script>
+      let age = 8;
+
+      if (age < 12) {
+        let age = 10; // This age variable is different from the age variable declared outside the if block
+        console.log("Age is too less to vote");
+      } else if (age < 12) {
+        console.log(`age is ${age}`);
+        console.log("You are a minor.");
+      }
+      // Even if both if and else if conditions are true, only the first block will execute because of the if-else structure
+
+      let cups = 10;
+      switch (cups) {
+        case 10:
+          console.log("You have 10 cups");
+          break;
+        case 20:
+          console.log("You have 20 cups");
+          break;
+        default:
+          console.log("You have some cups");
+      }
+    </script>
+  </body>
+</html>
