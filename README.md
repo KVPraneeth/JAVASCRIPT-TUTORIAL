@@ -1,0 +1,2 @@
+# JAVASCRIPT-TUTORIAL
+For learning JS
