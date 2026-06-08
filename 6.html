@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document 6</title>
+  </head>
+  <body>
+    <script>
+      // Alert
+      // Does not return any value, it just shows a message to the user
+      alert("This is an alert message!");
+
+      // Prompt
+      // Returns the input value as a string, or null if the user cancels the prompt
+      let username = prompt("Please enter your name:");
+      if (username) {
+        console.log(`Hello, ${username}!`);
+      } else {
+        console.log("User cancelled the prompt.");
+      }
+
+      // Confirm
+      // Returns true if the user clicks "OK" and false if the user clicks "Cancel"
+      let isConfirmed = confirm("Do you want to proceed?");
+      if (isConfirmed) {
+        console.log("User confirmed to proceed.");
+      } else {
+        console.log("User cancelled the action.");
+      }
+    </script>
+
+    <div class="container">This is a container</div>
+  </body>
+</html>
