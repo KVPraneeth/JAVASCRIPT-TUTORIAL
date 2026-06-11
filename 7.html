@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loops</title>
+  </head>
+  <body>
+    <div class="container">Our Webpage</div>
+    <script>
+      // For loop
+      let i = 0;
+      for (i = 2; i < 5; i++) {
+        console.log(`For loop iteration: ${i}`);
+      }
+
+      let sub = ["Sub1", "Sub2", "Sub3"];
+      for (let ind = 0; ind < sub.length; ind++) {
+        console.log(`Subject: ${sub[ind]}`);
+      }
+
+      // Usinf forEach loop
+      sub.forEach(function (element) {
+        console.log(`Subject using forEach: ${element}`);
+      });
+      // Using Arrow function with forEach
+      sub.forEach((element, index) => {
+        console.log(`Subjeect at index ${index} : ${element}`);
+      });
+
+      // Cannot use break or continue in forEach loop
+      // sub.forEach((element) => {
+      //   if (element === "Sub2") {
+      //     break; // This will cause an error
+      //   }
+      //   console.log(`Subject: ${element}`);
+      // });
+      // To do something similar to break or continue,
+      sub.forEach((element) => {
+        if (element === "Sub2") {
+          return; // This will skip the current iteration
+        }
+        console.log(`Subject: ${element}`);
+      });
+
+      // For of loop
+
+      for (subject of sub) {
+        console.log(`Subject using for of loop: ${subject}`);
+      }
+
+      // Iteration in Objects
+      let student = {
+        name: "John",
+        age: 20,
+        grade: "A",
+        "has passed all subjects": true,
+        hobbies: ["Reading", "Sports", "Music"],
+      };
+
+      for (key in student) {
+        console.log(`Key: ${key}, Value: ${student[key]}`);
+      }
+
+      for (key in student) {
+        console.log(` ${key} --> ${student[key]}`);
+      }
+
+      // While loop
+      let count = 0;
+      while (count < 5) {
+        console.log(`While loop count: ${count}`);
+        count++;
+      }
+
+      // do-while loop
+      let doWhileCount = 1;
+      do {
+        console.log(`Do-while loop count: ${doWhileCount}`);
+        doWhileCount++;
+      } while (doWhileCount < 5);
+    </script>
+  </body>
+</html>
