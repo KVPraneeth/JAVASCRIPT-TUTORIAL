@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Listeners</title>
+  </head>
+  <style>
+    /* Add your CSS styles here */
+    #btn {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+  <body>
+    <h1>Heading</h1>
+    <p id="paragraph">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore sunt
+      explicabo optio praesentium modi, accusamus minus molestias quis, quas
+      hic, nihil ab pariatur assumenda reprehenderit similique quasi reiciendis
+      fugit aut.
+    </p>
+
+    <button id="btn" onClick="toggleHideParagraph()">
+      Show/ Hide Paragraph
+    </button>
+
+    <p id="paragraph2">This is the second paragraph.</p>
+    <button id="btn2">Show / Hide Paragraph 2</button>
+
+    <script>
+      let para = document.getElementById("paragraph");
+
+      para.addEventListener("mouseover", function () {
+        console.log("Mouseover event triggered");
+        para.style.color = "red";
+      }); // Change text color to red on mouseover
+
+      para.addEventListener("click", function () {
+        console.log("Click event triggered");
+        para.style.color = "blue";
+      }); // Change text color to blue on click
+
+      para.addEventListener("mouseout", function () {
+        console.log("Mouseout event triggered");
+        para.style.color = "black";
+      }); // Change text color back to black on mouseout
+
+      // Mouseover and mouseout events are used to detect when the mouse pointer enters or leaves an element. In this case, we are changing the text color of the paragraph when the mouse is over it and changing it back when the mouse leaves.
+
+      function toggleHideParagraph() {
+        let para = document.getElementById("paragraph");
+        let btn = document.getElementById("btn");
+
+        if (para.style.display !== "none") {
+          para.style.display = "none"; // Hide the paragraph
+          btn.textContent = "Show Paragraph"; // Change button text
+        } else {
+          para.style.display = "block"; // Show the paragraph
+          btn.textContent = "Hide Paragraph"; // Change button text
+        }
+      }
+      //  Browser Events: Browser events are actions or occurrences that happen in the browser, such as user interactions (clicks, mouse movements, key presses), page loading, and other events that can be detected and responded to using JavaScript. Event listeners are used to listen for these events and execute specific code when they occur. Examples of browser events include:
+      // 1. Click events: Triggered when a user clicks on an element.
+      // 2. Mouse events: Triggered by mouse actions, such as mouseover, mouseout, and  mousemove. 3. Keyboard events: Triggered by key presses, such as keydown, keyup, and keypress.
+      // 4. Form events: Triggered by form interactions, such as submit, change, and input.
+      // 5. Window events: Triggered by changes in the browser window, such as resize, scroll, and load.
+      // 6. Touch events: Triggered by touch interactions on touch-enabled devices, such as touchstart, touchmove, and touchend.
+      // 7. Focus events: Triggered when an element gains or loses focus, such as focus and blur.
+      // 8. Drag and drop events: Triggered by drag and drop actions, such as dragstart, dragover, and drop.
+      // 9. Media events: Triggered by media playback actions, such as play, pause, and ended.
+      // 10. Custom events: User-defined events that can be created and triggered using JavaScript.
+      // Above we added event listeners to the paragraph element
+      // in the inline HTML. Instead it is generally a better practice to add event
+      // listeners in the JavaScript code, rather than inline in the HTML. This keeps
+      // the HTML clean and separates the structure from the behavior. In this case,
+      // we could remove the onClick attribute from the button and add an event
+      // listener for the click event in the JavaScript code instead.
+      let btn2 = document.getElementById("btn2");
+      btn2.addEventListener("click", toggleHideParagraph2);
+
+      function toggleHideParagraph2() {
+        let para2 = document.getElementById("paragraph2");
+
+        if (para2.style.display !== "none") {
+          para2.style.display = "none"; // Hide the paragraph
+          btn2.textContent = "Show Paragraph 2"; // Change button text
+        } else {
+          para2.style.display = "block"; // Show the paragraph
+          btn2.textContent = "Hide Paragraph 2"; // Change button text
+        }
+      }
+    </script>
+  </body>
+</html>
