@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SetTimeout and SetInterval functions</title>
+  </head>
+  <style>
+    .container {
+      font-size: 20px;
+      background-color: lightblue;
+      padding: 20px;
+      border: 2px solid grey;
+      margin: 4px;
+      text-align: center;
+    }
+
+    #time {
+      font-size: 30px;
+      font-weight: bold;
+    }
+  </style>
+  <body>
+    <div class="container">Time now is: <span id="time"></span></div>
+
+    <script>
+      // setTimeout function --> allows you to run a function after a specified number of milliseconds
+      // Syntax: setTimeout(function, milliseconds, param1, param2, ...)
+      //where function is the function to be executed, milliseconds is the number of milliseconds to wait before executing the function, and param1, param2, ... are optional parameters to pass to the function.
+
+      function greet(name) {
+        alert(`Hello ${name}, welcome to the world of JavaScript!`);
+      }
+
+      function greet2(name) {
+        console.log(`Hello ${name}, welcome to the world of JavaScript!`);
+      }
+
+      function greet3(name, age) {
+        console.log(`Hello ${name}, you are ${age} years old.`);
+      }
+
+      let timeoutId1 = setTimeout(greet, 3000, "Praneeth");
+      let timeoutId2 = setTimeout(greet2, 5000, "Rohit");
+      let timeoutId3 = setTimeout(greet3, 7000, "Praneeth", 30);
+
+      console.log(timeoutId1); // returns a unique ID for the timeout
+      console.log(timeoutId2); // returns a unique ID for the timeout
+
+      //clearTimeout function --> used to cancel a timer that was created using setTimeout function before the setTimeout function executes.
+      // Syntax --> clearTimeout(timeoutID); timeoutID --> the value returned by setTimeout()
+      // Calling clearTimeout on an already executed or invalid timer does nothing, it doesn't throw an error.
+
+      clearTimeout(timeoutId1);
+      console.log("timeout cancelled");
+      clearTimeout(timeoutId2);
+      console.log("timeout cancelled");
+      clearTimeout(timeoutId3);
+      console.log("timeout cancelled");
+
+      // setInterval function --> function that repeatedly executes a function at a specified time interval until it is stopped using clearInterval().
+      // Syntax --> setInterval(function, delay, param1, param2, ...)
+
+      function greetRepeat(name) {
+        alert(`Hi ! ${name}`);
+      }
+
+      let intervalId1 = setInterval(greetRepeat, 4000, "Praneeth");
+      clearInterval(intervalId1);
+
+      // Timer Implementation
+      function displayTime() {
+        let time = new Date();
+        console.log(time);
+        document.getElementById("time").innerHTML = time;
+      }
+
+      let intervalId2 = setInterval(displayTime, 1000);
+
+      setTimeout(() => {
+        console.log("4 seconds hava passed");
+        clearInterval(intervalId2);
+        document.getElementById("time").innerHTML = "";
+      }, 4000);
+    </script>
+  </body>
+</html>
