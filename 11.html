@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date and Time</title>
+  </head>
+  <body>
+    <div class="container">This is our Homepage</div>
+
+    <script>
+      // Date obj is used to work with dates and times. We can create, read , compare andformat dates
+      // months are 0-indexed.
+      // days of week are 0-indexed
+
+      let now = new Date();
+      console.log(now);
+
+      // Date(year, month, day, hrs, minutes, seconds)
+      let date1 = new Date(2026, 5, 29);
+      console.log(date1);
+
+      let date2 = new Date(2026, 5, 29, 10, 10, 10);
+      console.log(date2);
+
+      let newdate = new Date(2024, 9, 29, 2, 3, 4);
+      console.log(newdate);
+      // Modifying the date
+      newdate.setFullYear(2026);
+      newdate.setDate(15);
+      newdate.setMonth(0);
+      newdate.setHours(8);
+      newdate.setMinutes(8);
+      newdate.setSeconds(8);
+      console.log(newdate);
+
+      console.log(newdate.getFullYear());
+      console.log(newdate.getDate());
+      console.log(newdate.getDay());
+      console.log(newdate.getMonth());
+      console.log(newdate.getHours());
+      console.log(newdate.getMinutes());
+      console.log(newdate.getSeconds());
+    </script>
+  </body>
+</html>
