@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrow functions</title>
+  </head>
+  <body>
+    <div class="container" id="time">This is for arrow function</div>
+
+    <script>
+      let greet = () => alert("Hello");
+
+      greet();
+
+      let time = setInterval(() => {
+        let currDate = new Date();
+        document.getElementById("time").innerHTML = currDate;
+      }, 1000);
+
+      setTimeout(() => {
+        clearInterval(time);
+        document.getElementById("time").innerHTML = "";
+      }, 5000);
+
+      let sum = (a, b) => {
+        return a + b;
+      };
+
+      console.log(sum(4, 7));
+
+      let half = (a) => a / 2;
+      let halfof = half(8);
+      console.log(halfof);
+
+      let obj = {
+        names: ["CS", "DS", "OS"],
+        speak() {
+          this.names.forEach((s) => {
+            console.log(`Subject: ${s}`);
+          });
+        },
+      };
+
+      obj.speak();
+    </script>
+  </body>
+</html>
