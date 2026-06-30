@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <title>math Object</title>
+  </head>
+  <body>
+    <script>
+      let mathObject = Math;
+      console.log(mathObject);
+
+      console.log("the value of math.E is", Math.E);
+      console.log("Math.PI", mathObject.PI);
+      console.log("Ln2", mathObject.LN2);
+      console.log("Sqrt1_2", mathObject.SQRT1_2);
+
+      let a = 23.9386,
+        b = 67;
+
+      console.log("The value of a and b is", a, b);
+      console.log(
+        "Round off a and b is",
+        mathObject.round(a),
+        mathObject.round(b),
+      );
+      console.log("4 raised to power 2 is", mathObject.pow(4, 2));
+      console.log("Square root of 81 is", mathObject.sqrt(81));
+
+      // ceil and floor\
+      console.log("5.8 is rounded up to nearest integer", mathObject.ceil(5.8));
+      console.log(
+        "5.8 is rounded down to nearest integer",
+        mathObject.floor(5.8),
+      );
+
+      //absolute
+      console.log("The abs of - 32.423 is", mathObject.abs(-32.423));
+
+      // Trignometric function
+
+      console.log(
+        "The value of sin(pi/2) is",
+        mathObject.sin(mathObject.PI / 2),
+      );
+      console.log(
+        "The value of cos(pi/2) is",
+        mathObject.cos(mathObject.PI / 2),
+      );
+      console.log(
+        "The value of tan(pi/2) is",
+        mathObject.tan(mathObject.PI / 2),
+      );
+
+      // min and max
+      console.log("Min value of 12,32,8,1,83 is", Math.min(12, 32, 8, 1, 83));
+      console.log("Max value of 12,32,8,1,83 is", Math.max(12, 32, 8, 1, 83));
+
+      // Generating random values
+      console.log("The random number generated is", Math.random());
+
+      let minNumber = 1,
+        maxNumber = 100;
+
+      let randOmNumberBetween1_100 =
+        minNumber + (maxNumber - minNumber) * Math.random();
+      console.log(
+        "Random number between 1 to 100 is",
+        randOmNumberBetween1_100,
+      );
+    </script>
+  </body>
+</html>
