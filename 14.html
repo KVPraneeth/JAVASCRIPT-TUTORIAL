@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSON</title>
+  </head>
+  <body>
+    <!--- JSON - Javascript object notation -->
+    <!--- Data representation - Syntax {}[], key- value pairs -->
+
+    <script>
+      let jsonObj = {
+        name: "Praneeth",
+        conpany: "Stratus",
+        "Date of Birth": "2 Aug",
+        location: "India",
+        relocate: true,
+      };
+      console.log(jsonObj);
+      console.log("Type of jsonObj is", typeof jsonObj);
+      // JSON.stringify() is a built-in JavaScript method that converts a JavaScript object or value into a JSON string.
+      // Syntax - JSON.stringify(value, replacer, space);
+      // value → The JavaScript value to convert.
+      // replacer (optional) → Filters or transforms values.
+      // space (optional) → Adds indentation for readable output.
+
+      let jsonStr = JSON.stringify(jsonObj);
+      console.log(jsonStr);
+      console.log("Type of jsonStr is", typeof jsonStr);
+
+      let newJsonStr = jsonStr.replace("India", "US");
+      console.log(newJsonStr);
+      console.log("Type of newJsonStr is", typeof newJsonStr);
+
+      // JSON.parse() is the opposite of JSON.stringify().
+      // It converts a JSON string into a JavaScript object or value.
+      // JSON.parse(text, reviver);
+      // text → A valid JSON string.
+      // reviver (optional) → A function that transforms the parsed values before returning the object.
+
+      let newJsonObj = JSON.parse(newJsonStr);
+      console.log(newJsonObj);
+      console.log("Type of newJsonObj is", typeof newJsonObj);
+      // can also be used to parse an array
+      let jsonArray = '["Apple", "Banana", "Mango"]';
+
+      let fruits = JSON.parse(jsonArray);
+
+      console.log(fruits);
+      console.log(fruits[1]);
+
+      // Using reviver function
+      let json = '{"name":"Praneeth","age":25}';
+
+      let obj = JSON.parse(json, (key, value) => {
+        if (key === "age") {
+          return value + 1;
+        }
+        return value;
+      });
+
+      console.log(obj);
+    </script>
+  </body>
+</html>
