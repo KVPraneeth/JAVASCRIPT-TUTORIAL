@@ -63,6 +63,8 @@ counter.getValue(); // 0
 
 // ---------------------------------------------------------------------------------------------------//
 
+// Cleaner Implementaion solution - 
+
 function createCounter(){
     let value = 0;
     
